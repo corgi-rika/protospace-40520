@@ -1,10 +1,10 @@
 <main class="main">
   <div class="inner">
     <%# ログインしているときは以下を表示する %>
-    <%if user_signed_in?%>
+    <%  if user_signed_in?  %>
     <%# トップページの「こんにちは〇〇さん」の部分と、各プロトタイプの投稿者の部分から、ユーザー詳細ページへ遷移できるようにパスを設定した %>
       <div class="greeting"> 
-        こんにちは
+        こんにちは、
         <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link%>
       </div> 
     <%end%>

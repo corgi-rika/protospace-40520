@@ -1,14 +1,14 @@
 <div class="card">
   <%# 正しくプロトタイプの表示ができるように、_prototype.html.erbを編集した（ただし仮置きのリンクroot_pathはそのままで良い） %>
   <%# 次に、 _prototype.html.erbの画像およびプロトタイプ名におけるリンク先が、詳細ページとなるように設定した %>
-  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id)%>
+  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id) %>
   <div class="card__body">
-    <%= link_to "#{prototype.title}", prototype_path(prototype.id), class: :card__title%>
+    <%= link_to "#{prototype.title}", prototype_path(prototype.id), class: :card__title %>
     <p class="card__summary">
       <%= "#{prototype.catch_copy}" %>
     </p>
     <%#  トップページの「こんにちは〇〇さん」の部分と、各プロトタイプの投稿者の部分から、ユーザー詳細ページへ遷移できるようにパスを設定した %>
-    <%= link_to "by #{prototype.user.name}", user_path(prototype.id), class: :card__user %>
+    <%= link_to "by #{prototype.user.name}", user_path(prototype.user.id), class: :card__user %>
     <%# 上の "by #{prototype.user.name}"　は　"by #{prototype.user.id}"にしたらidが入った%>
   </div>
 </div>
