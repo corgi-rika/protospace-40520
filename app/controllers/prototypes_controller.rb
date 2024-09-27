@@ -15,7 +15,8 @@ class PrototypesController < ApplicationController
   def create
     #createアクションにデータ保存のための記述をし、保存されたときはルートパスに戻るような記述をした
     @prototype = current_user.prototypes.build(prototype_params)
-     #createアクションに、データが保存されなかったときは新規投稿ページへ戻るようrenderを用いて記述した
+    # @prototype = current_user.prototypes.create(prototype_params) でも大丈夫？
+    #createアクションに、データが保存されなかったときは新規投稿ページへ戻るようrenderを用いて記述した
     if @prototype.save
       redirect_to root_path
     else
